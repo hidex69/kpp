@@ -1,5 +1,9 @@
 package com.example.restservice;
 
+import org.springframework.stereotype.Component;
+
+import java.util.Objects;
+
 public class Triangle {
     private final double area;
     private final double perimeter;
@@ -26,5 +30,20 @@ public class Triangle {
                 (semiPerimeter - secondSide) * (semiPerimeter - thirdSide));
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Triangle triangle = (Triangle) o;
+        return Double.compare(triangle.area, area) == 0
+                && Double.compare(triangle.perimeter, perimeter) == 0
+                && Double.compare(triangle.firstSide, firstSide) == 0
+                && Double.compare(triangle.secondSide, secondSide) == 0
+                && Double.compare(triangle.thirdSide, thirdSide) == 0;
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(area, perimeter, firstSide, secondSide, thirdSide);
+    }
 }

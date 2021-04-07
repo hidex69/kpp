@@ -1,0 +1,20 @@
+POST http://localhost:8080/triangle
+Content-Type: application/json
+
+[
+    {
+        "firstSide": 3,
+        "secondSide": 4,
+        "thirdSide": 5
+    },
+    {
+        "firstSide": 3,
+        "secondSide": 4,
+        "thirdSide": 5
+    },
+    {
+        "firstSide": 3,
+        "secondSide": 4,
+        "thirdSide": 5
+    }   
+]

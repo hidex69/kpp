@@ -18,3 +18,21 @@ Content-Type: application/json
         "thirdSide": 5
     }   
 ]
+
+###
+
+GET http://localhost:8080/triangle?firstSide=3&secondSide=4&thirdSide=5
+
+###
+
+
+GET http://localhost:8080/counter
+
+
+###
+
+GET http://localhost:8080/triangles
+
+###
+
+GET http://localhost:8080/triangle?firstSide=6&secondSide=8&thirdSide=10

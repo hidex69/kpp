@@ -30,9 +30,9 @@ public class TriangleController {
 
 
     @GetMapping("/triangle")
-    public RequestResult triangle(@RequestParam(value = "1") int firstSide,
-                                  @RequestParam(value = "2") int secondSide,
-                                  @RequestParam(value = "3") int thirdSide) {
+    public RequestResult triangle(@RequestParam int firstSide,
+                                  @RequestParam int secondSide,
+                                  @RequestParam int thirdSide) {
 
         RequestArray requestArray = new RequestArray(firstSide, secondSide, thirdSide);
         Triangle triangle = new Triangle(firstSide, secondSide, thirdSide);

@@ -1,14 +1,29 @@
 package com.example.restservice.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
 public class RequestResult {
-    private final double area;
-    private final double perimeter;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    private double area;
+    private double perimeter;
+
 
     public RequestResult(double area, double perimeter) {
         this.area = area;
         this.perimeter = perimeter;
+
+    }
+
+    public RequestResult() {
+
     }
 
     public double getArea() {
@@ -17,6 +32,22 @@ public class RequestResult {
 
     public double getPerimeter() {
         return perimeter;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
+    }
+
+    public void setPerimeter(double perimeter) {
+        this.perimeter = perimeter;
     }
 
     @Override

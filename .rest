@@ -3,19 +3,19 @@ Content-Type: application/json
 
 [
     {
-        "firstSide": 3,
-        "secondSide": 4,
-        "thirdSide": 5
+        "firstSide": "a",
+        "secondSide": "4",
+        "thirdSide": "5"
     },
     {
-        "firstSide": 3,
-        "secondSide": 4,
-        "thirdSide": 5
+        "firstSide": 6,
+        "secondSide": 8,
+        "thirdSide":10
     },
     {
-        "firstSide": 3,
-        "secondSide": 4,
-        "thirdSide": 5
+        "firstSide": 12,
+        "secondSide": 16,
+        "thirdSide": 20
     }   
 ]
 

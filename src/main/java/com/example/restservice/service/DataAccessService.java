@@ -12,16 +12,16 @@ public class DataAccessService {
 
     public DataAccessService() {}
 
-    public boolean checkIfAlreadyExist(RequestArray requestArray) {
-        return map.containsKey(requestArray);
+    public boolean checkIfAlreadyExist(List<RequestResult> results, RequestResult result) {
+        return results.contains(result);
     }
 
     public void addToCache(RequestArray requestArray, RequestResult result) {
         map.put(requestArray, result);
     }
 
-    public RequestResult getFromCache(RequestArray requestArray) {
-        return map.get(requestArray);
+    public RequestResult getFromCache(List<RequestResult> results, RequestResult result) {
+        return results.stream().filter(n -> n.equals(result)).findFirst().get();
     }
 
     public Collection<RequestResult> getFromCache() {

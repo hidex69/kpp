@@ -76,10 +76,16 @@ public class TriangleController {
     }
 
     @PostMapping("/triangle")
-    public List<RequestAvgModel> triangleArray(@RequestBody List<Triangle> triangleList) {
-        counterService.inc();
-        return triangleList.stream().filter(t -> t.getFirstSide() > 0 && t.getSecondSide() > 0 && t.getThirdSide() > 0
-                ).map(TriangleService::result).collect(Collectors.toList());
+    public void triangleArray(@RequestBody List<Triangle> triangleList) {
+        triangleList.forEach(t -> {
+            if (t.getFirstSide() <= 0 || t.getSecondSide() <= 0
+            || t.getThirdSide() <= 0) {
+                throw new InputException("Invalid request params");
+            }
+        });
+        triangleList.forEach(t -> resultRepository.save(new RequestResult(TriangleService.area(t),
+                TriangleService.perimeter(t))));
+//        return triangleList.stream().map(TriangleService::result).collect(Collectors.toList());
     }
 
     @ExceptionHandler(InputException.class)
